@@ -6,24 +6,43 @@ interface CountdownProps {
 }
 
 export function Countdown({ targetDate }: CountdownProps) {
-  const [timeLeft, setTimeLeft] = React.useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
+  const calculateTimeLeft = () => {
+    try {
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
+      
+      // Return 0 if date is invalid or past
+      if (isNaN(distance) || distance < 0) {
+        return {
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        };
+      }
 
-      setTimeLeft({
+      return {
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
         hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
         minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
         seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
+      };
+    } catch (error) {
+      console.error('Error calculating time:', error);
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+  };
+
+  const [timeLeft, setTimeLeft] = React.useState(calculateTimeLeft());
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(interval);

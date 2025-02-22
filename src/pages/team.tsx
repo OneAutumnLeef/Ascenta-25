@@ -35,6 +35,11 @@ const teamMembers = [
 ];
 
 export function TeamPage() {
+  // Add useEffect to scroll to top on mount
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#061826] via-[#0a2436] to-[#061826]">
       <div className="container mx-auto px-4 py-12">
@@ -64,13 +69,18 @@ export function TeamPage() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {teamMembers.map((member) => (
+          {teamMembers.map((member, index) => (
             <motion.div
               key={member.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden group border border-teal-400/10 hover:border-teal-400/20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.5,
+                delay: index * 0.2,
+                ease: "easeOut"
+              }}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden group 
+                border border-teal-400/10 hover:border-teal-400/20"
             >
               <div className="aspect-square relative overflow-hidden">
                 <img
