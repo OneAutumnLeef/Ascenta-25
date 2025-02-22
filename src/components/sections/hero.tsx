@@ -85,7 +85,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <Countdown targetDate={new Date('2025-03-1')} />
+          <Countdown targetDate={new Date(2025, 2, 1)} /> {/* Month is 0-based, so 2 = March */}
         </motion.div>
 
         <motion.div
