@@ -24,7 +24,7 @@ export function Projects() {
   useEffect(() => {
     async function loadProjects() {
       try {
-        const submissions = await parseProjectSubmissions('/ASCENTA_25_-_Registration_form_Submissions_2025-02-22.csv');
+        const submissions = await parseProjectSubmissions('/ASCENTA_25_-_Registration_form_Submissions_2025-02-23.csv');
         setProjects(submissions);
       } catch (error) {
         console.error('Failed to load projects:', error);
