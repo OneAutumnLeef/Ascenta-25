@@ -31,17 +31,18 @@ export async function parseProjectSubmissions(filePath: string): Promise<Project
         year: row['Year of Program (1)']
       },
       {
-        name: row['Name (2)'],
-        email: row['Email Address (1)'],
-        phone: row['Phone Number'],
-        year: row['Year of Program']
-      },
-      {
         name: row['Name (3)'],
         email: row['Email Address (2)'],
         phone: row['Phone number (2)'],
         year: row['Year of Program (2)']
-      }
+      },
+      {
+        name: row['Name (2)'],
+        email: row['Email Address (1)'],
+        phone: row['Phone Number'],
+        year: row['Year of Program (2)']
+      },
+      
     ].filter(member => member.name),
     videoLink: row['Please insert your YouTube video link:']
   }));
