@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Search, X, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Search, X, } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { parseProjectSubmissions, ProjectSubmission } from '../utils/csvParser';
 
@@ -28,7 +28,7 @@ export function ProjectsPage() {
   useEffect(() => {
     async function loadProjects() {
       try {
-        const submissions = await parseProjectSubmissions('/ASCENTA_25_-_Registration_form_Submissions_2025-02-22.csv');
+        const submissions = await parseProjectSubmissions('/ASCENTA_25_-_Registration_form_Submissions_2025-02-23.csv');
         setProjects(submissions);
         setFilteredProjects(submissions);
       } catch (error) {
