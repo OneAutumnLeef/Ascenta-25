@@ -35,87 +35,16 @@ export function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Information */}
+          {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-teal-400/10 hover:border-teal-400/20 transition-all"
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
-            <div className="space-y-4">
-              {/* Club Contact */}
-              <div className="flex items-center text-gray-300 group">
-                <div className="p-2 rounded-full bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
-                  <Mail className="w-5 h-5 text-teal-400" />
-                </div>
-                <a href="mailto:ecell@iiits.in" className="hover:text-teal-400 transition-colors">
-                  ecell@iiits.in
-                </a>
-              </div>
-              {/* Person 1 Contact */}
-              <div className="flex items-center text-gray-300 group">
-                <div className="p-2 rounded-full bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
-                  <User className="w-5 h-5 text-teal-400" />
-                </div>
-                <div>
-                  <div className="font-medium text-white">Deraj Yojith</div>
-                  <a href="mailto:deraj.y@iiits.in" className="hover:text-teal-400 transition-colors">
-                    derajyojith.r22@iiits.in
-                  </a>
-                </div>
-              </div>
-              {/* Person 2 Contact */}
-              <div className="flex items-center text-gray-300 group">
-                <div className="p-2 rounded-full bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
-                  <User className="w-5 h-5 text-teal-400" />
-                </div>
-                <div>
-                  <div className="font-medium text-white">Venkata Rahul</div>
-                  <a href="mailto:varun.m@iiits.in" className="hover:text-teal-400 transition-colors">
-                  venkatrahul.v23@iiits.in
-                  </a>
-                </div>
-              </div>
-                {/* Person 3 Contact */}
-              <div className="flex items-center text-gray-300 group">
-                <div className="p-2 rounded-full bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
-                  <User className="w-5 h-5 text-teal-400" />
-                </div>
-                <div>
-                  <div className="font-medium text-white">Poorvaj Pranav</div>
-                  <a href="mailto:varun.m@iiits.in" className="hover:text-teal-400 transition-colors">
-                  poorvajpranav.b23@iiits.in
-                  </a>
-                </div>
-              </div>
-              {/* General Contact */}
-              {/* <div className="flex items-center text-gray-300 group">
-                <div className="p-2 rounded-full bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
-                  <Phone className="w-5 h-5 text-teal-400" />
-                </div>
-                <a href="tel:+91" className="hover:text-teal-400 transition-colors">
-                  +91 8122770927
-                </a>
-              </div> */}
-              <div className="flex items-center text-gray-300 group">
-                <div className="p-2 rounded-full bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
-                  <MapPin className="w-5 h-5 text-teal-400" />
-                </div>
-                <span>IIIT Sri City, Andhra Pradesh, India</span>
-              </div>
-            </div>
-          </motion.div>
-           {/* Contact Form */}
-           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-teal-400/10 hover:border-teal-400/20 transition-all"
           >
             <h3 className="text-2xl font-bold text-white mb-4">Send us a message</h3>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
                 <label htmlFor="name" className="block text-gray-300 text-sm font-medium mb-2">
                   Your Name
                 </label>
@@ -128,7 +57,7 @@ export function Contact() {
                   required
                 />
               </div>
-              <div className="mb-4">
+              <div>
                 <label htmlFor="email" className="block text-gray-300 text-sm font-medium mb-2">
                   Your Email
                 </label>
@@ -141,7 +70,7 @@ export function Contact() {
                   required
                 />
               </div>
-              <div className="mb-6">
+              <div>
                 <label htmlFor="message" className="block text-gray-300 text-sm font-medium mb-2">
                   Message
                 </label>
@@ -155,12 +84,76 @@ export function Contact() {
                 />
               </div>
               <button
-                className="bg-teal-400 hover:bg-teal-300 text-gray-900 font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition-colors"
+                className="bg-teal-400 hover:bg-teal-300 text-gray-900 font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition-colors w-full"
                 type="submit"
               >
                 Send Message
               </button>
             </form>
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-teal-400/10 hover:border-teal-400/20 transition-all"
+          >
+            <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
+            <div className="space-y-4">
+              {/* Club Contact */}
+              <div className="flex items-center text-gray-300 group">
+                <div className="p-3 rounded-xl bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
+                  <Mail className="w-5 h-5 text-teal-400" />
+                </div>
+                <a href="mailto:ecell@iiits.in" className="hover:text-teal-400 transition-colors">
+                  ecell@iiits.in
+                </a>
+              </div>
+              {/* Person 1 Contact */}
+              <div className="flex items-center text-gray-300 group">
+                <div className="p-3 rounded-xl bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
+                  <User className="w-5 h-5 text-teal-400" />
+                </div>
+                <div>
+                  <div className="font-medium text-white">Deraj Yojith</div>
+                  <a href="mailto:deraj.y@iiits.in" className="hover:text-teal-400 transition-colors">
+                    derajyojith.r22@iiits.in
+                  </a>
+                </div>
+              </div>
+              {/* Person 2 Contact */}
+              <div className="flex items-center text-gray-300 group">
+                <div className="p-3 rounded-xl bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
+                  <User className="w-5 h-5 text-teal-400" />
+                </div>
+                <div>
+                  <div className="font-medium text-white">Venkata Rahul</div>
+                  <a href="mailto:venkatrahul.v23@iiits.in" className="hover:text-teal-400 transition-colors">
+                    venkatrahul.v23@iiits.in
+                  </a>
+                </div>
+              </div>
+              {/* Person 3 Contact */}
+              <div className="flex items-center text-gray-300 group">
+                <div className="p-3 rounded-xl bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
+                  <User className="w-5 h-5 text-teal-400" />
+                </div>
+                <div>
+                  <div className="font-medium text-white">Poorvaj Pranav</div>
+                  <a href="mailto:poorvajpranav.b23@iiits.in" className="hover:text-teal-400 transition-colors">
+                    poorvajpranav.b23@iiits.in
+                  </a>
+                </div>
+              </div>
+              {/* General Contact */}
+              <div className="flex items-center text-gray-300 group">
+                <div className="p-3 rounded-xl bg-teal-400/10 mr-4 group-hover:scale-110 transition-transform">
+                  <MapPin className="w-5 h-5 text-teal-400" />
+                </div>
+                <span>IIIT Sri City, Andhra Pradesh, India</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
