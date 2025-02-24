@@ -6,7 +6,7 @@ const timelineData = [
   {
     phase: "Phase 1",
     title: "Registration & Video Submission",
-    date: "Feb 18 - Feb 23, 2025",
+    date: "Feb 18 - Feb 26, 2025",
     description: "Team registration and online video submission phase",
     details: [
       "Register your team on the portal",
