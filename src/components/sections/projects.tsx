@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -33,6 +33,8 @@ export function Projects() {
     loadProjects();
   }, []);
 
+  const displayedProjects = projects.slice(0, 3);
+
   return (
     <section className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
@@ -50,7 +52,7 @@ export function Projects() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {projects.map((project) => {
+          {displayedProjects.map((project) => {
             const videoId = project.videoLink ? getYouTubeId(project.videoLink) : null;
             const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null;
 
